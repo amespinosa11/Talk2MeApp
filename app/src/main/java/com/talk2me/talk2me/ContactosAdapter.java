@@ -1,12 +1,14 @@
 package com.talk2me.talk2me;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -16,11 +18,11 @@ import java.util.List;
 public class ContactosAdapter extends BaseAdapter
 {
 
-    private List<String> listaContactos;
+    private List<ContactoEntity> listaContactos;
     private Context context;
     private static LayoutInflater inflater = null;
 
-    public ContactosAdapter(MainActivity mainActivity, List<String> contactsList)
+    public ContactosAdapter(MainActivity mainActivity, List<ContactoEntity> contactsList)
     {
         this.listaContactos = contactsList;
         this.context = mainActivity;
@@ -46,12 +48,22 @@ public class ContactosAdapter extends BaseAdapter
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         View view1 = view;
-        final String lC = listaContactos.get(i);
+        final ContactoEntity lC = listaContactos.get(i);
         if (view == null)
             view = inflater.inflate(R.layout.detail_contact, null);
 
         TextView nombreTextView = (TextView) view.findViewById(R.id.textViewContact);
-        nombreTextView.setText(lC);
+        nombreTextView.setText(lC.getNombre());
+
+        nombreTextView.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(context, InformacionContactoActivity.class);
+                i.putExtra("contacto", (Serializable) lC);
+                context.startActivity(i);
+            }
+        });
 
         return view;
     }

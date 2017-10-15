@@ -120,16 +120,14 @@ public class RegistrarseActivity extends AppCompatActivity implements View.OnCli
     {
         if (checkPermission()) {
             Log.e("permission", "Permission already granted.");
+            //Se pasa a la ventana principal
             Intent intent = new Intent(this,MainActivity.class);
             startActivity(intent);
+            //Falta mandar esta información y guardarla en una base de datos
         } else {
 
     //If your app doesn’t have permission to access external storage, then call requestPermission//
-
             requestPermission();
-            //Se pasa a la ventana principal
-
-            //Falta mandar esta información y guardarla en una base de datos
         }
 
     }
@@ -138,9 +136,9 @@ public class RegistrarseActivity extends AppCompatActivity implements View.OnCli
         switch (requestCode) {
             case PERMISSION_REQUEST_CODE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
-                    Toast.makeText(RegistrarseActivity.this,
-                            "Permission accepted", Toast.LENGTH_LONG).show();
+                    ingresar();
+                    //Toast.makeText(RegistrarseActivity.this,
+                      //      "Permission accepted", Toast.LENGTH_LONG).show();
                 } else {
                     Toast.makeText(RegistrarseActivity.this,
                             "Permission denied", Toast.LENGTH_LONG).show();

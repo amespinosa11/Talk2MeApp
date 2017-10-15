@@ -40,9 +40,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<String> listaContactos;
-
-    private TextView textViewContactos;
+    private ArrayList<ContactoEntity> listaContactos;
 
     private ListView listViewlistaContactos;
 
@@ -55,17 +53,22 @@ public class MainActivity extends AppCompatActivity {
 
         listViewlistaContactos = (ListView) findViewById(R.id.lisViewContactos);
 
+        organizarLista();
         ContactosAdapter itemsAdapter = new ContactosAdapter(MainActivity.this,listaContactos);
         listViewlistaContactos.setAdapter(itemsAdapter);
         listViewlistaContactos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick (AdapterView < ? > parent, View view,int position, long id) {
-
+                Intent intent = new Intent(MainActivity.this,InformacionContactoActivity.class);
+                intent.putExtra("contacto", (Serializable) listaContactos.get(position));
+                startActivity(intent);
             }
         });
 
+
         importarContactos();
+
 
     }
 
@@ -93,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         String phoneNumber = cursor2.getString(cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                         builder.append("Contacto: ").append(name).append("Numero : ").append(phoneNumber).append("\n\n");
-                        String contacto = name;
+                        ContactoEntity contacto = new ContactoEntity(name,phoneNumber);
                         listaContactos.add(contacto);
                     }
                     cursor2.close();
@@ -102,7 +105,28 @@ public class MainActivity extends AppCompatActivity {
 
         }
         cursor.close();
+
         //textViewContactos.setText(builder);
         //Toast.makeText(this,"Si pasa importar contactos",Toast.LENGTH_SHORT).show();
+    }
+
+    public void organizarLista()
+    {
+        ArrayList<ContactoEntity> listaOrganizada = new ArrayList<>();
+        ContactoEntity c = null;
+        for(int i = 0; i < listaContactos.size(); i++)
+        {
+            ContactoEntity actual = listaContactos.get(i);
+            for (int j = 1; j < listaContactos.size(); j++)
+            {
+                ContactoEntity actual2 = listaContactos.get(j);
+                if(actual.getNumeroCelular().compareTo(actual2.getNumeroCelular()) < 0)
+                {
+                   c=actual;
+                }
+                listaOrganizada.add(c);
+            }
+        }
+        listaContactos = listaOrganizada;
     }
 }
