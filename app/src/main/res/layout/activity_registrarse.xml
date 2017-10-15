@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/contraintRegistrarseLayout"
+    tools:context="com.talk2me.talk2me.RegistrarseActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="30dp"
+        android:textSize="30dp"
+        android:text="@string/registrarse"
+        android:id="@+id/textViewRegistrarse"/>
+
+    <AutoCompleteTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/nombre"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRegistrarse"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLength="50"
+        android:textSize="15dp"
+        />
+
+    <AutoCompleteTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/apellido"
+        android:hint="Apellido"
+        android:inputType="textPersonName"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLength="40"
+        android:textSize="15dp"
+        />
+
+    <AutoCompleteTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/celular"
+        android:hint="Celular"
+        android:textSize="15dp"
+        android:inputType="phone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellido"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLength="20"
+        />
+
+    <AutoCompleteTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailRegistrarse"
+        android:hint="Email"
+        android:textSize="15dp"
+        android:inputType="textEmailAddress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/celular"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLength="30"
+        />
+
+    <AutoCompleteTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/contrasenia"
+        android:hint="Contraseña (mínimo 8 caracteres)"
+        android:inputType="textPassword"
+        android:textSize="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailRegistrarse"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLength="20"
+        />
+
+    <AutoCompleteTextView
+        android:layout_width="0dp"
+        android:textSize="15dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/contrasenia2"
+        android:hint="Confirmar contraseña"
+        android:inputType="textPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contrasenia"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:maxLength="20"
+        />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/registrarse"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contrasenia2"
+        android:layout_marginTop="87dp"
+        app:layout_constraintHorizontal_bias="0.943"
+        android:textColor="@color/colorText"
+        android:background="@drawable/shapebutton"
+        android:id="@+id/btnRegistrarse2"
+        />
+
+</android.support.constraint.ConstraintLayout>
+
+</ScrollView>

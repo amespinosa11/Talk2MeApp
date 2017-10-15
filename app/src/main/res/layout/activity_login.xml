@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    style="@style/Theme.AppCompat.NoActionBar"
+    android:layout_height="match_parent"
+    android:id="@+id/constraintLoginLayout"
+    tools:context="com.talk2me.talk2me.LoginActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp"
+        android:id="@+id/textViewNombreApp"
+        android:textSize="30dp"
+        android:textStyle="italic|bold"
+        android:textColor="@color/colorText"/>
+
+    <AutoCompleteTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombreApp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/colorText"
+        android:textSize="15dp"/>
+
+    <AutoCompleteTextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginStart="20dp"
+        android:textSize="15dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/colorText"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/iniciar_sesion"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:layout_marginTop="64dp"
+        app:layout_constraintHorizontal_bias="0.229"
+        android:textColor="@color/colorText"
+        android:background="@drawable/shapebutton"
+        android:id="@+id/btnIniciarSesion"/>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="@string/registrarse"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:layout_marginTop="64dp"
+        app:layout_constraintHorizontal_bias="0.751"
+        android:textColor="@color/colorText"
+        android:background="@drawable/shapebutton"
+        android:id="@+id/btnRegistrarse"
+        />
+
+</android.support.constraint.ConstraintLayout>
