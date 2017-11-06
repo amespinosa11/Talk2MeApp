@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.talk2me.talk2me.LlamadaActivity">
+
+    <HorizontalScrollView
+        android:layout_width="368dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/linearLayoutLlamada"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imagePrueba1"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp" />
+
+            <ImageView
+                android:id="@+id/imagePrueba2"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"
+                />
+
+            <ImageView
+                android:id="@+id/imagePrueba3"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"/>
+
+            <ImageView
+                android:id="@+id/imagePrueba4"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"/>
+            <ImageView
+                android:id="@+id/imagePrueba5"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"/>
+            <ImageView
+                android:id="@+id/imagePrueba6"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_margin="10dp"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewNombreUsuarioLlamada"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:text=""
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutLlamada"
+        android:layout_marginTop="27dp"
+        app:layout_constraintHorizontal_bias="0.074" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/textHola"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombreUsuarioLlamada"
+        android:layout_marginTop="24dp"
+        app:layout_constraintHorizontal_bias="0.076" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/textBuenosDias"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombreUsuarioLlamada"
+        android:layout_marginTop="24dp"
+        app:layout_constraintHorizontal_bias="0.239" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/textComoestas"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombreUsuarioLlamada"
+        android:layout_marginTop="24dp"
+        app:layout_constraintHorizontal_bias="0.536" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/textBien"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombreUsuarioLlamada"
+        android:layout_marginTop="24dp"
+        app:layout_constraintHorizontal_bias="0.747" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/yTu"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/textViewNombreUsuarioLlamada"
+        android:layout_marginTop="24dp"
+        app:layout_constraintHorizontal_bias="0.89" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:id="@+id/Adios"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@+id/textHola"
+        android:layout_marginTop="24dp"
+        app:layout_constraintHorizontal_bias="0.89" />
+
+
+
+</android.support.constraint.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.talk2me.talk2me;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -53,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
 
         listViewlistaContactos = (ListView) findViewById(R.id.lisViewContactos);
 
-        organizarLista();
+        importarContactos();
+
         ContactosAdapter itemsAdapter = new ContactosAdapter(MainActivity.this,listaContactos);
         listViewlistaContactos.setAdapter(itemsAdapter);
         listViewlistaContactos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,17 +69,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        importarContactos();
+
 
 
     }
 
     public void importarContactos()
     {
+        ProgressDialog progressDialog =  new ProgressDialog(MainActivity.this);
+        progressDialog.setMessage("Cargando Contactos");
+        progressDialog.setTitle("Espera...");
+        progressDialog.show();
+
         StringBuilder builder = new StringBuilder();
         ContentResolver contentResolver = getContentResolver();
         Cursor cursor = contentResolver.query(ContactsContract.Contacts.CONTENT_URI,null,null,null,null);
-
+        ContactoEntity contacto = null;
         if(cursor.getCount() > 0)
         {
             while(cursor.moveToNext())
@@ -96,8 +103,12 @@ public class MainActivity extends AppCompatActivity {
                     {
                         String phoneNumber = cursor2.getString(cursor2.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                         builder.append("Contacto: ").append(name).append("Numero : ").append(phoneNumber).append("\n\n");
-                        ContactoEntity contacto = new ContactoEntity(name,phoneNumber);
-                        listaContactos.add(contacto);
+                        contacto = new ContactoEntity(name,phoneNumber);
+
+                        if(!listaContactos.contains(contacto))
+                        {
+                            listaContactos.add(contacto);
+                        }
                     }
                     cursor2.close();
                 }
@@ -105,28 +116,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
         cursor.close();
-
+        progressDialog.hide();
         //textViewContactos.setText(builder);
         //Toast.makeText(this,"Si pasa importar contactos",Toast.LENGTH_SHORT).show();
     }
 
-    public void organizarLista()
-    {
-        ArrayList<ContactoEntity> listaOrganizada = new ArrayList<>();
-        ContactoEntity c = null;
-        for(int i = 0; i < listaContactos.size(); i++)
-        {
-            ContactoEntity actual = listaContactos.get(i);
-            for (int j = 1; j < listaContactos.size(); j++)
-            {
-                ContactoEntity actual2 = listaContactos.get(j);
-                if(actual.getNumeroCelular().compareTo(actual2.getNumeroCelular()) < 0)
-                {
-                   c=actual;
-                }
-                listaOrganizada.add(c);
-            }
-        }
-        listaContactos = listaOrganizada;
-    }
 }

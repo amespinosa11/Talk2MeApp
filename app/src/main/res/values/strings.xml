@@ -2,4 +2,6 @@
     <string name="app_name">Talk2Me</string>
     <string name="registrarse">Registrarse</string>
     <string name="iniciar_sesion">Iniciar Sesión</string>
+    <string name="speech_prompt">Say something&#8230;</string>
+    <string name="speech_not_supported">Sorry! Your device doesn\'t support speech input</string>
 </resources>
